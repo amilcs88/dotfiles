@@ -93,6 +93,48 @@ alias la='ls -A'
 alias lah='ls -lah'
 alias l='ls -CF'
 
+#adding flags
+alias cp="cp -i"            #confirm before overwritting something 
+alias df='df -h'            #human readable sizes
+
+## get top prcess eating memory
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+
+##get top process eating cpu
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+
+# update and updgrade 
+alias update='sudo apt-get update -yy'
+alias upgrade='sudo apt-get upgrade -yy'
+
+# colorized grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+#escalated vim privilege
+alias svim='sudo vim'
+
+#display ports
+alias ports='netstat -tulanp'
+
+#display alias 
+alias alias='cat .bashrc | grep ^'alias''
+
+#alias function - today date
+today() {
+    echo -n "Today's date is: "
+    date +"%A, %B %-d, %Y"
+}
+
+#alias test
+hello() {
+    echo $@
+}
+
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
